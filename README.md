@@ -31,21 +31,8 @@ How It Works
 # Clone the repository.
 
 1.Open the image and video caption generator.ipynb notebook.
-
-2.Load the pre-trained model from Hugging Face:
-  from transformers import BlipProcessor, BlipForConditionalGeneration
-  model_name = "Salesforce/blip-image-captioning-base"
-  processor = BlipProcessor.from_pretrained(model_name)
-  model = BlipForConditionalGeneration.from_pretrained(model_name)
-
-3. Run the model on an image:
-  from PIL import Image  
-  image = Image.open("sample.jpg")  
-  inputs = processor(images=image, return_tensors="pt")  
-  caption_ids = model.generate(**inputs)  
-  caption = processor.batch_decode(caption_ids, skip_special_tokens=True)[0] 
-  print("Generated Caption:", caption)  
-
+2.Load the pre-trained model from Hugging Face
+3. Run the model on an image
 
 
 Example Output
